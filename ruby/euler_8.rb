@@ -18,4 +18,17 @@ def largest_product_in_series(long_num, num_adjacent)
   largest_product
 end
 
+def largest_product_in_series_with_each_cons(long_num, num_adjacent)
+  digits = long_num.digits.reverse
+  largest_product = 0
+
+  digits.each_cons(num_adjacent) { |x|
+    product = x.inject(:*)
+    largest_product = product if product > largest_product
+  }
+
+  largest_product
+end
+
 puts "The largest product in the series of #{num_adjacent} adjacent numbers is #{largest_product_in_series(long_num, num_adjacent)}"
+puts "The largest product in the series of #{num_adjacent} adjacent numbers is #{largest_product_in_series_with_each_cons(long_num, num_adjacent)}"
