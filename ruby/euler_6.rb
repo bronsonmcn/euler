@@ -1,4 +1,4 @@
-def euler(num)
+def sum_square_difference(num)
   sum_squares = 0
   sum = 0
 
@@ -12,4 +12,4 @@ def euler(num)
   square_of_sum - sum_squares
 end
 
-puts (euler(100))
+puts (sum_square_difference(100))
